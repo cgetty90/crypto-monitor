@@ -4,97 +4,49 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Crypto Monitor</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-  <div class="bg-image" aria-hidden="true"></div>
-  <div class="bg-overlay" aria-hidden="true"></div>
+  <div class="background-overlay"></div>
 
   <div class="app-shell">
     <header class="topbar">
       <div>
-        <div class="eyebrow">Signal Dashboard</div>
+        <p class="eyebrow">Signal Dashboard</p>
         <h1>Crypto Monitor</h1>
-        <p class="subhead">BTC, ETH, and SOL in one clean view with buy/sell guidance.</p>
       </div>
+
       <div class="topbar-actions">
-        <div class="last-updated" id="lastUpdated">Last updated: --</div>
+        <div id="lastUpdated" class="last-updated">Last updated: --</div>
         <button id="refreshBtn" class="refresh-btn">Refresh</button>
       </div>
     </header>
 
-    <section class="cards-grid" id="coinGrid"></section>
+    <main class="dashboard">
+      <section>
+        <div id="coinGrid" class="coin-grid"></div>
+      </section>
 
-    <section class="status-panel">
-      <div class="status-left">
-        <div class="eyebrow">Selected asset</div>
-        <div class="status-title-row">
-          <h2 id="selectedCoinTitle">Bitcoin</h2>
-          <span id="selectedSignalPill" class="signal-pill hold">Loading</span>
-        </div>
-        <p id="selectedSummary" class="status-summary">Loading latest signal...</p>
-      </div>
-      <div class="status-right">
-        <div class="status-box">
-          <span class="status-label">Signal score</span>
-          <strong id="scoreValue">--/100</strong>
-        </div>
-        <div class="status-box">
-          <span class="status-label">Bias</span>
-          <strong id="buySellBias">--</strong>
-        </div>
-      </div>
-    </section>
+      <section class="detail-panel">
+        <div class="detail-top">
+          <div>
+            <p class="section-label">Selected asset</p>
+            <h2 id="chartTitle">BTC Chart</h2>
+          </div>
 
-    <section class="chart-panel">
-      <div class="chart-toolbar">
-        <div class="chart-key-stats" id="chartKeyStats"></div>
-        <div class="toolbar-right">
-          <div class="auto-cycle" id="autoCycleStatus">Auto cycle: On</div>
-          <div class="range-switcher">
-            <button class="range-btn" data-range="1">1D</button>
-            <button class="range-btn active" data-range="7">7D</button>
-            <button class="range-btn" data-range="30">1M</button>
+          <div class="time-buttons">
+            <button data-days="1">1D</button>
+            <button data-days="7">7D</button>
+            <button data-days="30" class="active">1M</button>
           </div>
         </div>
-      </div>
-      <div class="chart-wrap compact-chart">
-        <canvas id="priceChart"></canvas>
-      </div>
-    </section>
 
-    <section class="info-grid">
-      <div class="panel">
-        <div class="panel-head">
-          <span class="eyebrow">Decision guide</span>
-          <h3>When it looks attractive</h3>
+        <div class="chart-wrap">
+          <canvas id="chart"></canvas>
         </div>
-        <div class="advice-grid">
-          <div class="advice-card good-buy">
-            <div class="advice-tag">Good time to buy</div>
-            <p id="buyAdvice">--</p>
-          </div>
-          <div class="advice-card good-sell">
-            <div class="advice-tag">Good time to sell</div>
-            <p id="sellAdvice">--</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="panel">
-        <div class="panel-head">
-          <span class="eyebrow">Score breakdown</span>
-          <h3>Why the signal says that</h3>
-        </div>
-        <div class="subscores" id="subscores"></div>
-      </div>
-    </section>
-
-    <section class="metrics-grid" id="metricsPanel"></section>
+      </section>
+    </main>
   </div>
 
   <script src="app.js"></script>
