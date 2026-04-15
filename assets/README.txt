@@ -1,3 +1,1 @@
-Place your background image here as:
-
-assets/koala-money.png
+Place your background image here as assets/koala-money.png

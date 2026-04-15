@@ -9,14 +9,12 @@
 </head>
 <body>
   <div class="background-overlay"></div>
-
   <div class="app-shell">
     <header class="topbar">
       <div>
         <p class="eyebrow">Signal Dashboard</p>
         <h1>Crypto Monitor</h1>
       </div>
-
       <div class="topbar-actions">
         <div id="lastUpdated" class="last-updated">Last updated: --</div>
         <button id="refreshBtn" class="refresh-btn" type="button">Refresh</button>
@@ -24,9 +22,7 @@
     </header>
 
     <main class="dashboard">
-      <section>
-        <div id="coinGrid" class="coin-grid"></div>
-      </section>
+      <section><div id="coinGrid" class="coin-grid"></div></section>
 
       <section class="detail-panel">
         <div class="detail-info">
@@ -38,22 +34,10 @@
         </div>
 
         <div class="insight-grid">
-          <div class="insight-card">
-            <div class="insight-label">Action Bias</div>
-            <div class="insight-value" id="actionBias">--</div>
-          </div>
-          <div class="insight-card">
-            <div class="insight-label">Buy Score</div>
-            <div class="insight-value" id="buyScore">--</div>
-          </div>
-          <div class="insight-card">
-            <div class="insight-label">Sell Score</div>
-            <div class="insight-value" id="sellScore">--</div>
-          </div>
-          <div class="insight-card">
-            <div class="insight-label">24h Change</div>
-            <div class="insight-value" id="change24h">--</div>
-          </div>
+          <div class="insight-card"><div class="insight-label">Action Bias</div><div class="insight-value" id="actionBias">--</div></div>
+          <div class="insight-card"><div class="insight-label">Buy Score</div><div class="insight-value" id="buyScore">--</div></div>
+          <div class="insight-card"><div class="insight-label">Sell Score</div><div class="insight-value" id="sellScore">--</div></div>
+          <div class="insight-card"><div class="insight-label">24h Change</div><div class="insight-value" id="change24h">--</div></div>
         </div>
 
         <div class="guidance-card">
@@ -66,7 +50,6 @@
             <p class="section-label">Price chart</p>
             <h2 id="chartTitle">BTC Chart</h2>
           </div>
-
           <div class="time-buttons">
             <button type="button" data-days="1">1D</button>
             <button type="button" data-days="7">7D</button>
@@ -80,22 +63,10 @@
         </div>
 
         <div class="metrics-grid">
-          <div class="metric-box">
-            <div class="metric-label">Current Price</div>
-            <div class="metric-value" id="metricPrice">--</div>
-          </div>
-          <div class="metric-box">
-            <div class="metric-label">Market Cap</div>
-            <div class="metric-value" id="metricMarketCap">--</div>
-          </div>
-          <div class="metric-box">
-            <div class="metric-label">24h Volume</div>
-            <div class="metric-value" id="metricVolume">--</div>
-          </div>
-          <div class="metric-box">
-            <div class="metric-label">Rank</div>
-            <div class="metric-value" id="metricRank">--</div>
-          </div>
+          <div class="metric-box"><div class="metric-label">Current Price</div><div class="metric-value" id="metricPrice">--</div></div>
+          <div class="metric-box"><div class="metric-label">Market Cap</div><div class="metric-value" id="metricMarketCap">--</div></div>
+          <div class="metric-box"><div class="metric-label">24h Volume</div><div class="metric-value" id="metricVolume">--</div></div>
+          <div class="metric-box"><div class="metric-label">Rank</div><div class="metric-value" id="metricRank">--</div></div>
         </div>
       </section>
     </main>
